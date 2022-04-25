@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --facebook-color: rgba(25, 143, 245,1);
+  --twitter-color: rgba(28, 160, 242, 1);
+  --instagram-color: linear-gradient(to right, rgba(253, 196, 104, 1), rgba(223, 73, 150, 1));
+  --youtube-color: rgba(196, 3, 42, 1);
+  --toogle-state-color: rgba(30, 41, 59, 1);
+}
+
+/* dark mode toggle */
+input:checked~.dot {
+  transform: translateX(100%);
+  background-color: var(--toogle-state-color);
+}
+/* slats */
+.bg-slat--facebook {
+  background-color: var(--facebook-color);
+}
+
+.bg-slat--twitter {
+  background-color: var(--twitter-color);
+}
+
+.bg-slat--instagram {
+  background-image: var(--instagram-color);
+}
+
+.bg-slat--youtube {
+  background-color: var(--youtube-color);
+}
