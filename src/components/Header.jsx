@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [darkmode, setdarkmode] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "dark") {
+      setdarkmode(true);
+    }
+  }, [])
 
   const toggleDarkmode = () => {
 
@@ -43,6 +49,7 @@ const Header = () => {
                   id="dark-mode"
                   className="sr-only"
                   onChange={toggleDarkmode}
+                  checked={darkmode}
                 />
 
                 <div className="block bg-gradient-to-r from-cyan-300 to-blue-300 w-10 h-6 rounded-full dark:from-cyan-500 dark:to-blue-500"></div>
